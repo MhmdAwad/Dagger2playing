@@ -2,7 +2,7 @@ package com.mhmdawad.dagger2play
 
 import dagger.Component
 
-@Component
+@Component(modules = [CoffeeModule::class])
 interface CoffeeComponent {
 
     fun getCoffee(): Coffee
