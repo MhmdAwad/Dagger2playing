@@ -1,6 +1,8 @@
 package com.mhmdawad.dagger2play
 
 import javax.inject.Inject
+import javax.inject.Singleton
 
-class River {
+@Singleton
+class River @Inject constructor(){
 }

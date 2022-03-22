@@ -16,10 +16,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // add value in run time if you want a value from user.
-        val component: CoffeeComponent = (application as MainApplication).coffeeComponent
-        component.inject(this)
+        val component: AppComponent = (application as MainApplication).appComponent
 
-        println(">>>>>>>>>>>>>>?? ${coffee.mBeans} ==== ${coffee2.mBeans}")
+        val coffeeComponent = DaggerCoffeeComponent.builder().appComponent(component).milk(2).sugar(2).build()
+        coffeeComponent.inject(this)
+
+        println(">>>>>>>>>>>> $coffee === ${coffee.beans} === ${coffee.river} ")
+        println(">>>>>>>>>>>> $coffee2 === ${coffee2.beans} === ${coffee2.river} ")
 
 
 

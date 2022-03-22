@@ -2,6 +2,7 @@ package com.mhmdawad.dagger2play
 
 import dagger.Module
 import dagger.Provides
+import javax.inject.Singleton
 
 
 /*
@@ -10,10 +11,11 @@ import dagger.Provides
         know where the instance of the class initialized .
  */
 @Module
-class CoffeeModule {
+class BeansModule {
 
+    @Singleton
     @Provides
-    fun provideRiver(): River = River()
+    fun provideBeans(): Beans = Beans()
 
 
 }

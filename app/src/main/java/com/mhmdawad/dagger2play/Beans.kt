@@ -5,5 +5,6 @@ import javax.inject.Singleton
 
 
 @Singleton
-class Beans @Inject  constructor(){
+class Beans{
+
 }

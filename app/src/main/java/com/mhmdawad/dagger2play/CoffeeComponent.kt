@@ -5,8 +5,8 @@ import dagger.Component
 import javax.inject.Named
 import javax.inject.Singleton
 
-@Singleton
-@Component(modules = [CoffeeModule::class])
+@ActivityScope
+@Component(dependencies = [AppComponent::class])
 interface CoffeeComponent {
 
     fun getCoffee(): Coffee
@@ -21,6 +21,7 @@ interface CoffeeComponent {
         fun sugar(@Named("sugar") sugar: Int): Builder
         @BindsInstance
         fun milk(@Named("milk") milk: Int): Builder
+        fun appComponent(appComponent: AppComponent): Builder
 
     }
 
