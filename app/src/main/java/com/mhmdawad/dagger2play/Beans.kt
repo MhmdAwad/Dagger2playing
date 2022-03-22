@@ -1,7 +1,9 @@
 package com.mhmdawad.dagger2play
 
 import javax.inject.Inject
+import javax.inject.Singleton
 
 
-class Beans @Inject constructor(){
+@Singleton
+class Beans @Inject  constructor(){
 }

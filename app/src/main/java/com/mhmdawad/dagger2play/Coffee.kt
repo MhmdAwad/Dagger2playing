@@ -11,6 +11,7 @@ import javax.inject.Named
 //constructor injection
 class Coffee @Inject constructor(beans: Beans) {
 
+    val mBeans = beans
     // Field injection
     @Inject
     lateinit var river: River

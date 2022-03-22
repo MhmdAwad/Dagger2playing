@@ -3,7 +3,9 @@ package com.mhmdawad.dagger2play
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Named
+import javax.inject.Singleton
 
+@Singleton
 @Component(modules = [CoffeeModule::class])
 interface CoffeeComponent {
 

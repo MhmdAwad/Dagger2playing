@@ -9,13 +9,17 @@ class MainActivity : AppCompatActivity() {
 
     @Inject
     lateinit var coffee: Coffee
+    @Inject
+    lateinit var coffee2: Coffee
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         // add value in run time if you want a value from user.
-        val component: CoffeeComponent = DaggerCoffeeComponent.builder().sugar(3).milk(4).build()
+        val component: CoffeeComponent = (application as MainApplication).coffeeComponent
         component.inject(this)
+
+        println(">>>>>>>>>>>>>>?? ${coffee.mBeans} ==== ${coffee2.mBeans}")
 
 
 
