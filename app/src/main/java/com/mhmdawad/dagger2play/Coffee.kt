@@ -19,7 +19,7 @@ class Coffee @Inject constructor(beans: Beans) {
        he'll call the injected method without call it from outside or inside.
      */
     @Inject
-    public fun runCoffeeMachine(){
-        Log.d("TAG", "runCoffeeMachine: ")
+    public fun runCoffeeMachine(sugar: Int){
+        Log.d("TAG", "runCoffeeMachine: $sugar")
     }
 }

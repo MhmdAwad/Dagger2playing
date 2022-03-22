@@ -10,8 +10,11 @@ import dagger.Provides
         know where the instance of the class initialized .
  */
 @Module
-class CoffeeModule {
+class CoffeeModule(val sugar: Int) {
 
     @Provides
     fun provideRiver(): River = River()
+
+    @Provides
+    fun provideSugar(): Int = sugar
 }
