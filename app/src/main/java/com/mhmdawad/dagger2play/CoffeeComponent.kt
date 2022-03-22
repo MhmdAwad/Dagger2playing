@@ -2,26 +2,24 @@ package com.mhmdawad.dagger2play
 
 import dagger.BindsInstance
 import dagger.Component
+import dagger.Subcomponent
 import javax.inject.Named
 import javax.inject.Singleton
 
 @ActivityScope
-@Component(dependencies = [AppComponent::class])
+@Subcomponent
 interface CoffeeComponent {
 
     fun getCoffee(): Coffee
     fun inject(mainActivity: MainActivity)
 
-
-
-    @Component.Builder
+    @Subcomponent.Builder
     interface Builder{
         fun build(): CoffeeComponent
         @BindsInstance
         fun sugar(@Named("sugar") sugar: Int): Builder
         @BindsInstance
         fun milk(@Named("milk") milk: Int): Builder
-        fun appComponent(appComponent: AppComponent): Builder
 
     }
 

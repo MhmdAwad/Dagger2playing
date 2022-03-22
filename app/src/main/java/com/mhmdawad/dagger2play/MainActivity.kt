@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         // add value in run time if you want a value from user.
         val component: AppComponent = (application as MainApplication).appComponent
 
-        val coffeeComponent = DaggerCoffeeComponent.builder().appComponent(component).milk(2).sugar(2).build()
+        val coffeeComponent = component.coffeeComponentBuilder().milk(2).sugar(2).build()
         coffeeComponent.inject(this)
 
         println(">>>>>>>>>>>> $coffee === ${coffee.beans} === ${coffee.river} ")
