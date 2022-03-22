@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // add value in run time if you want a value from user.
-        val component: CoffeeComponent = DaggerCoffeeComponent.builder().coffeeModule(CoffeeModule(3)).build()
+        val component: CoffeeComponent = DaggerCoffeeComponent.builder().sugar(3).milk(4).build()
         component.inject(this)
 
 
